@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorry & Advance Happy New Year</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(180deg, #fdeff9, #ecf0ff);
+        color: #4a4a4a;
+        scroll-behavior: smooth;
+      }
+
+      section {
+        min-height: 100vh;
+        padding: 40px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .page {
+        background: #ffffffdd;
+        max-width: 900px;
+        width: 100%;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h1,
+      h2 {
+        color: #ff7eb3;
+      }
+
+      h1 {
+        font-size: clamp(1.8rem, 5vw, 2.8rem);
+      }
+
+      h2 {
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+      }
+
+      p {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        line-height: 1.8;
+        margin-top: 20px;
+      }
+
+      img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 20px;
+        margin-top: 20px;
+      }
+
+      .emoji {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      /* CELEBRATE BUTTON */
+      .celebrate-btn {
+        margin-top: 30px;
+        padding: 14px 35px;
+        border: none;
+        background: linear-gradient(90deg, #ff7eb3, #ffb3d9);
+        color: white;
+        font-size: 1.1rem;
+        border-radius: 30px;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        transition: transform 0.2s ease;
+      }
+
+      .celebrate-btn:hover {
+        transform: scale(1.05);
+      }
+
+      /* POPUP OVERLAY */
+      .popup-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(6px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+      }
+
+      /* POPUP BOX */
+      .popup {
+        background: linear-gradient(180deg, #fff0f6, #f0f4ff);
+        padding: 40px;
+        border-radius: 25px;
+        text-align: center;
+        max-width: 420px;
+        width: 90%;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        animation: popIn 0.6s ease;
+      }
+
+      @keyframes popIn {
+        from {
+          transform: scale(0.7);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .popup h2 {
+        color: #ff6fae;
+      }
+
+      .close-btn {
+        margin-top: 25px;
+        padding: 10px 22px;
+        border: none;
+        background: #ff7eb3;
+        color: white;
+        border-radius: 20px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      /* CONFETTI */
+      .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        top: -10px;
+        animation: fall linear infinite;
+        z-index: 1000;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(110vh) rotate(360deg);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .page {
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PAGE 1 – COVER -->
+    <section>
+      <div class="page">
+        <div class="emoji">💖✨</div>
+        <h1>Happy Birth day My Motki.. 💖</h1>
+        <p><strong>For my Life, with love and hope.</strong></p>
+
+        <img
+          src=" https://wallpapercave.com/wp/wp11296770.jpg
+"
+          alt="Cute friends illustration"
+        />
+      </div>
+    </section>
+
+    <!-- PAGE 2 – ADVANCE HAPPY NEW YEAR -->
+    <section>
+      <div class="page">
+        <h2>Happy Birth day in Advance.. 🌟</h2>
+
+        <p>
+         Happy Birthday! Babe.. Hope your year is as awesome as you are 🎂
+          <br /><br />
+         Sending you lots of happiness and good vibes on your  special day!
+        </p>
+
+        <button class="celebrate-btn" onclick="openPopup()">
+          Celebrate 🎉
+        </button>
+
+        <img
+          src="https://rukminim2.flixcart.com/image/480/640/xif0q/poster/u/7/i/medium-dudu-bubu-hd-poster-for-cute-baby-12x18-inch-2-posters-original-imahb2gzzzktt24t.jpeg?q=90"
+          alt="New Year pastel illustration"
+        />
+      </div>
+    </section>
+
+    <!-- PAGE 3 – FINAL CLOSING -->
+    <section>
+      <div class="page">
+        <h2>From My Heart 💫</h2>
+
+        <p>
+          Thank you for reading this and for being you.
+          <br /><br />
+        Thank you for entering My Life..
+          <br /><br />
+         My Life is Incomplete Without You.. 💖
+        </p>
+
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSscqIRp9bDjj02Ia5Idej9P_3KNpPaog41Sg&s"
+          alt="Cute teddy illustration"
+        />
+      </div>
+    </section>
+
+    <!-- POPUP -->
+    <div class="popup-overlay" id="popup">
+      <div class="popup">
+        <h2>🎆 Happy Birth day babe...! 🎆</h2>
+        <p>May this year bring you love, happiness, peace, and success 💖</p>
+        <p>Let’s celebrate beautiful... ✨</p>
+        <button class="close-btn" onclick="closePopup()">Close 💫</button>
+      </div>
+    </div>
+
+    <script>
+      function openPopup() {
+        document.getElementById("popup").style.display = "flex";
+        createConfetti();
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.querySelectorAll(".confetti").forEach((c) => c.remove());
+      }
+
+      function createConfetti() {
+        for (let i = 0; i < 60; i++) {
+          const confetti = document.createElement("div");
+          confetti.className = "confetti";
+          confetti.style.left = Math.random() * 100 + "vw";
+          confetti.style.backgroundColor = [
+            "#ff7eb3",
+            "#ffd1e8",
+            "#b5c7ff",
+            "#fff1a8",
+          ][Math.floor(Math.random() * 4)];
+          confetti.style.animationDuration = Math.random() * 2 + 2 + "s";
+          confetti.style.opacity = Math.random();
+          document.body.appendChild(confetti);
+        }
+      }
+    </script>
+  </body>
+</html>
